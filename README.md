@@ -24,7 +24,16 @@ NDVI = (NIR - Red) / (NIR + Red). The sample data in `data/regions.csv` is synth
 If the model name fails, run `python list_models.py` and set `export MODEL=<a name from the list>`.
 To use Anthropic instead: `PROVIDER=anthropic ANTHROPIC_API_KEY=... python eval.py`.
 
+## Results
+Run with `gemini-3.1-flash-lite` on the Gemini API free tier:
+- First run: 4 of 6 cases passed. One failure was a bug in my checker: it looked for the exact text `0.7273`, but the agent correctly answered "approximately 0.727".
+- I changed the checker to compare numbers with a tolerance of 0.005 (two-decimal rounding counts as correct) and added tests for the checker.
+- After the fix: 6 of 6 passed (one run, so this is not a statistical result).
+
+Other models behaved differently: two other models also answered the example question correctly, and one timed out (504). The newest model was overloaded (503) when I tried it, so the loop retries on 429, 503 and 504.
+
 ## Limits
 - Only three tools and six synthetic observations, so this is a learning project, not a real EO system.
 - No real satellite imagery and no vision-language model yet.
-- The benchmark checks strings, so a correct answer worded differently can fail.
+- The benchmark has only six questions and one run per model. It checks numbers and words, so an unusual wording can still fail.
+- I wrote the agent loop by hand to understand it. I have not used an agent framework.

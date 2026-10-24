@@ -75,3 +75,10 @@ def test_retry_on_rate_limit(monkeypatch):
     client = FakeClient([limited, reply(text="ok")])
     answer, _ = run_agent("q", client, model="x")
     assert answer == "ok" and len(client.calls) == 2
+
+
+def test_thinking_level_from_env(monkeypatch):
+    monkeypatch.setenv("THINKING_LEVEL", "low")
+    assert str(_config().thinking_config.thinking_level).endswith("LOW")
+    monkeypatch.delenv("THINKING_LEVEL")
+    assert _config().thinking_config is None
