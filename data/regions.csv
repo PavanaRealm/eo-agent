@@ -1,0 +1,7 @@
+region_id,description,date,red,nir
+forest_a,dense forest,2024-07-15,0.04,0.45
+forest_a,dense forest,2025-07-15,0.06,0.38
+crop_b,wheat field,2025-05-10,0.08,0.40
+crop_b,wheat field,2025-09-10,0.20,0.28
+water_c,lake,2025-07-15,0.03,0.02
+urban_d,city district,2025-07-15,0.18,0.22
