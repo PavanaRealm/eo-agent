@@ -1,0 +1,451 @@
+{
+  "summary": {
+    "n_runs": 5,
+    "n_cases": 6,
+    "passed_per_run": [
+      6,
+      6,
+      6,
+      6,
+      6
+    ],
+    "all_cases_passed_in_every_run": true,
+    "total_errors": 0,
+    "cases": [
+      {
+        "q": "What is the NDVI of forest_a on 2025-07-15 and what does it mean?",
+        "runs": 5,
+        "errors": 0,
+        "passes": 5,
+        "answered": 5,
+        "flaky": false,
+        "tool_paths": {
+          "get_region_observations > compute_ndvi > classify_ndvi": 5
+        },
+        "mean_seconds": 16.4
+      },
+      {
+        "q": "What is the NDVI of forest_a on 2024-07-15?",
+        "runs": 5,
+        "errors": 0,
+        "passes": 5,
+        "answered": 5,
+        "flaky": false,
+        "tool_paths": {
+          "get_region_observations > compute_ndvi": 5
+        },
+        "mean_seconds": 17.73
+      },
+      {
+        "q": "Did vegetation in crop_b decline between 2025-05-10 and 2025-09-10? Give both NDVI values.",
+        "runs": 5,
+        "errors": 0,
+        "passes": 5,
+        "answered": 5,
+        "flaky": false,
+        "tool_paths": {
+          "get_region_observations > compute_ndvi > compute_ndvi": 5
+        },
+        "mean_seconds": 17.01
+      },
+      {
+        "q": "What land cover class is water_c on 2025-07-15?",
+        "runs": 5,
+        "errors": 0,
+        "passes": 5,
+        "answered": 5,
+        "flaky": false,
+        "tool_paths": {
+          "get_region_observations > compute_ndvi > classify_ndvi": 5
+        },
+        "mean_seconds": 13.81
+      },
+      {
+        "q": "Compare the NDVI of urban_d and forest_a on 2025-07-15.",
+        "runs": 5,
+        "errors": 0,
+        "passes": 5,
+        "answered": 5,
+        "flaky": false,
+        "tool_paths": {
+          "get_region_observations > get_region_observations > compute_ndvi > compute_ndvi": 5
+        },
+        "mean_seconds": 18.54
+      },
+      {
+        "q": "What is the NDVI of region mountain_x?",
+        "runs": 5,
+        "errors": 0,
+        "passes": 5,
+        "answered": 5,
+        "flaky": false,
+        "tool_paths": {
+          "get_region_observations": 5
+        },
+        "mean_seconds": 8.2
+      }
+    ]
+  },
+  "runs": [
+    [
+      {
+        "q": "What is the NDVI of forest_a on 2025-07-15 and what does it mean?",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "compute_ndvi",
+          "classify_ndvi"
+        ],
+        "answer": "The NDVI of forest_a on 2025-07-15 is 0.7273 (calculated using NIR 0.38 and red 0.06). This value indicates dense vegetation.",
+        "seconds": 24.3
+      },
+      {
+        "q": "What is the NDVI of forest_a on 2024-07-15?",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "compute_ndvi"
+        ],
+        "answer": "The NDVI of forest_a on 2024-07-15 is approximately 0.8367, calculated using a near-infrared reflectance of 0.45 and a red reflectance of 0.04.",
+        "seconds": 38.88
+      },
+      {
+        "q": "Did vegetation in crop_b decline between 2025-05-10 and 2025-09-10? Give both NDVI values.",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "compute_ndvi",
+          "compute_ndvi"
+        ],
+        "answer": "Yes, the vegetation in `crop_b` declined between these dates. The NDVI was 0.6667 on 2025-05-10 and decreased to 0.1667 on 2025-09-10.",
+        "seconds": 14.71
+      },
+      {
+        "q": "What land cover class is water_c on 2025-07-15?",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "compute_ndvi",
+          "classify_ndvi"
+        ],
+        "answer": "On 2025-07-15, the land cover class for water_c is water or non-vegetated surface, based on an NDVI value of -0.2 (calculated using NIR 0.02 and red 0.03).",
+        "seconds": 14.55
+      },
+      {
+        "q": "Compare the NDVI of urban_d and forest_a on 2025-07-15.",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "get_region_observations",
+          "compute_ndvi",
+          "compute_ndvi"
+        ],
+        "answer": "On 2025-07-15, the NDVI for `urban_d` is 0.1 (calculated from NIR 0.22 and red 0.18), and the NDVI for `forest_a` is approximately 0.7273 (calculated from NIR 0.38 and red 0.06).",
+        "seconds": 6.47
+      },
+      {
+        "q": "What is the NDVI of region mountain_x?",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations"
+        ],
+        "answer": "The region \"mountain_x\" does not exist in the data.",
+        "seconds": 1.5
+      }
+    ],
+    [
+      {
+        "q": "What is the NDVI of forest_a on 2025-07-15 and what does it mean?",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "compute_ndvi",
+          "classify_ndvi"
+        ],
+        "answer": "On 2025-07-15, the NDVI for forest_a was approximately 0.727 (calculated using NIR 0.38 and red 0.06). This indicates dense vegetation.",
+        "seconds": 7.23
+      },
+      {
+        "q": "What is the NDVI of forest_a on 2024-07-15?",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "compute_ndvi"
+        ],
+        "answer": "The NDVI of forest_a on 2024-07-15 is approximately 0.8367, calculated using a near-infrared reflectance of 0.45 and a red reflectance of 0.04.",
+        "seconds": 10.92
+      },
+      {
+        "q": "Did vegetation in crop_b decline between 2025-05-10 and 2025-09-10? Give both NDVI values.",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "compute_ndvi",
+          "compute_ndvi"
+        ],
+        "answer": "Yes, the vegetation in `crop_b` declined between these dates. The NDVI value was 0.6667 on 2025-05-10 and decreased to 0.1667 on 2025-09-10.",
+        "seconds": 15.73
+      },
+      {
+        "q": "What land cover class is water_c on 2025-07-15?",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "compute_ndvi",
+          "classify_ndvi"
+        ],
+        "answer": "On 2025-07-15, the land cover class for water_c is water or non-vegetated surface, based on an NDVI value of -0.2 (calculated using NIR 0.02 and red 0.03).",
+        "seconds": 10.21
+      },
+      {
+        "q": "Compare the NDVI of urban_d and forest_a on 2025-07-15.",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "get_region_observations",
+          "compute_ndvi",
+          "compute_ndvi"
+        ],
+        "answer": "On 2025-07-15, the NDVI for `urban_d` is 0.1 (using NIR 0.22, Red 0.18), and the NDVI for `forest_a` is 0.7273 (using NIR 0.38, Red 0.06).",
+        "seconds": 32.02
+      },
+      {
+        "q": "What is the NDVI of region mountain_x?",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations"
+        ],
+        "answer": "The region \"mountain_x\" does not exist in the data.",
+        "seconds": 1.19
+      }
+    ],
+    [
+      {
+        "q": "What is the NDVI of forest_a on 2025-07-15 and what does it mean?",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "compute_ndvi",
+          "classify_ndvi"
+        ],
+        "answer": "The NDVI of forest_a on 2025-07-15 is approximately 0.73 (calculated using a near-infrared reflectance of 0.38 and a red reflectance of 0.06). This value indicates dense vegetation.",
+        "seconds": 13.77
+      },
+      {
+        "q": "What is the NDVI of forest_a on 2024-07-15?",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "compute_ndvi"
+        ],
+        "answer": "The NDVI of forest_a on 2024-07-15 is 0.8367 (calculated using NIR 0.45 and red 0.04).",
+        "seconds": 16.52
+      },
+      {
+        "q": "Did vegetation in crop_b decline between 2025-05-10 and 2025-09-10? Give both NDVI values.",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "compute_ndvi",
+          "compute_ndvi"
+        ],
+        "answer": "Yes, the vegetation in `crop_b` declined between these dates. The NDVI value was 0.6667 on 2025-05-10 and 0.1667 on 2025-09-10.",
+        "seconds": 9.55
+      },
+      {
+        "q": "What land cover class is water_c on 2025-07-15?",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "compute_ndvi",
+          "classify_ndvi"
+        ],
+        "answer": "On 2025-07-15, the land cover class for water_c is water or non-vegetated surface, based on an NDVI value of -0.2 (calculated from a near-infrared reflectance of 0.02 and a red reflectance of 0.03).",
+        "seconds": 7.13
+      },
+      {
+        "q": "Compare the NDVI of urban_d and forest_a on 2025-07-15.",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "get_region_observations",
+          "compute_ndvi",
+          "compute_ndvi"
+        ],
+        "answer": "On 2025-07-15, the NDVI for **urban_d** is approximately **0.1** (based on NIR 0.22 and Red 0.18), while the NDVI for **forest_a** is approximately **0.7273** (based on NIR 0.38 and Red 0.06).",
+        "seconds": 25.16
+      },
+      {
+        "q": "What is the NDVI of region mountain_x?",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations"
+        ],
+        "answer": "Region mountain_x does not exist in the data.",
+        "seconds": 7.44
+      }
+    ],
+    [
+      {
+        "q": "What is the NDVI of forest_a on 2025-07-15 and what does it mean?",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "compute_ndvi",
+          "classify_ndvi"
+        ],
+        "answer": "The NDVI of forest_a on 2025-07-15 is 0.7273 (calculated using NIR 0.38 and red 0.06). This value indicates dense vegetation.",
+        "seconds": 17.39
+      },
+      {
+        "q": "What is the NDVI of forest_a on 2024-07-15?",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "compute_ndvi"
+        ],
+        "answer": "The NDVI of forest_a on 2024-07-15 is 0.8367 (calculated using NIR 0.45 and red 0.04).",
+        "seconds": 7.54
+      },
+      {
+        "q": "Did vegetation in crop_b decline between 2025-05-10 and 2025-09-10? Give both NDVI values.",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "compute_ndvi",
+          "compute_ndvi"
+        ],
+        "answer": "Yes, the vegetation in crop_b declined between 2025-05-10 and 2025-09-10. The NDVI value for 2025-05-10 was 0.6667 and the NDVI value for 2025-09-10 was 0.1667.",
+        "seconds": 34.16
+      },
+      {
+        "q": "What land cover class is water_c on 2025-07-15?",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "compute_ndvi",
+          "classify_ndvi"
+        ],
+        "answer": "On 2025-07-15, the land cover class for water_c is water or non-vegetated surface, based on an NDVI value of -0.2 (calculated using NIR 0.02 and red 0.03).",
+        "seconds": 21.11
+      },
+      {
+        "q": "Compare the NDVI of urban_d and forest_a on 2025-07-15.",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "get_region_observations",
+          "compute_ndvi",
+          "compute_ndvi"
+        ],
+        "answer": "On 2025-07-15, the NDVI of `urban_d` is 0.1 (using NIR 0.22 and red 0.18), and the NDVI of `forest_a` is approximately 0.73 (using NIR 0.38 and red 0.06).",
+        "seconds": 16.49
+      },
+      {
+        "q": "What is the NDVI of region mountain_x?",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations"
+        ],
+        "answer": "Region mountain_x does not exist in the data.",
+        "seconds": 12.25
+      }
+    ],
+    [
+      {
+        "q": "What is the NDVI of forest_a on 2025-07-15 and what does it mean?",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "compute_ndvi",
+          "classify_ndvi"
+        ],
+        "answer": "The NDVI for forest_a on 2025-07-15 is approximately 0.73 (calculated from a red reflectance of 0.06 and an NIR reflectance of 0.38). This value indicates dense vegetation.",
+        "seconds": 19.31
+      },
+      {
+        "q": "What is the NDVI of forest_a on 2024-07-15?",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "compute_ndvi"
+        ],
+        "answer": "The NDVI of forest_a on 2024-07-15 is 0.8367 (calculated using a near-infrared reflectance of 0.45 and a red reflectance of 0.04).",
+        "seconds": 14.81
+      },
+      {
+        "q": "Did vegetation in crop_b decline between 2025-05-10 and 2025-09-10? Give both NDVI values.",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "compute_ndvi",
+          "compute_ndvi"
+        ],
+        "answer": "Yes, the vegetation in crop_b declined between 2025-05-10 and 2025-09-10. The NDVI value was 0.6667 on 2025-05-10 and decreased to 0.1667 on 2025-09-10.",
+        "seconds": 10.92
+      },
+      {
+        "q": "What land cover class is water_c on 2025-07-15?",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "compute_ndvi",
+          "classify_ndvi"
+        ],
+        "answer": "On 2025-07-15, the land cover class for water_c is water or non-vegetated surface, calculated with an NDVI of -0.2 (NIR: 0.02, Red: 0.03).",
+        "seconds": 16.03
+      },
+      {
+        "q": "Compare the NDVI of urban_d and forest_a on 2025-07-15.",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations",
+          "get_region_observations",
+          "compute_ndvi",
+          "compute_ndvi"
+        ],
+        "answer": "On 2025-07-15, the NDVI of `urban_d` is 0.1 (based on NIR 0.22 and red 0.18), and the NDVI of `forest_a` is approximately 0.7273 (based on NIR 0.38 and red 0.06).",
+        "seconds": 12.57
+      },
+      {
+        "q": "What is the NDVI of region mountain_x?",
+        "ok": true,
+        "error": null,
+        "tools": [
+          "get_region_observations"
+        ],
+        "answer": "Region mountain_x does not exist in the data.",
+        "seconds": 18.6
+      }
+    ]
+  ]
+}

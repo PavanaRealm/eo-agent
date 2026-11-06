@@ -35,5 +35,13 @@ Other models behaved differently: two other models also answered the example que
 ## Limits
 - Only three tools and six synthetic observations, so this is a learning project, not a real EO system.
 - No real satellite imagery and no vision-language model yet.
-- The benchmark has only six questions and one run per model. It checks numbers and words, so an unusual wording can still fail.
+- The benchmark has only six questions; the consistency check used five runs of one model. It checks numbers and words, so an unusual wording can still fail.
 - I wrote the agent loop by hand to understand it. I have not used an agent framework.
+
+## Consistency (5 runs)
+`consistency.py` ran the 6-question benchmark 5 times with `gemini-3.1-flash-lite` on 6 November 2026.
+- Passed per run: 6, 6, 6, 6, 6. All 30 answers passed; 0 API errors.
+- Every question used the same tool path in all 5 runs.
+- Average time per question: 8 to 18 seconds.
+- This shows consistency for this model and these six questions on synthetic data. It does not show
+  how the agent behaves with other models, harder questions or real data.
