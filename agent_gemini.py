@@ -19,7 +19,7 @@ SYSTEM = (
     "Answer briefly and state the NDVI values you used."
 )
 
-DEFAULT_MODEL = "gemini-flash-latest"  # override with the MODEL environment variable
+DEFAULT_MODEL = "gemini-3.1-flash-lite"  # override with the MODEL environment variable
 
 
 def _config():
