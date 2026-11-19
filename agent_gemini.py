@@ -1,6 +1,6 @@
 """The same tool-using agent, but with Google's Gemini API (free tier available).
 
-The model decides which tools to call. This file runs the loop myself
+The model decides which tools to call. This file runs the loop in plain Python
 (automatic function calling is switched off): model -> tool calls -> tool results -> model
 ... until a final text answer.
 """

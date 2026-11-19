@@ -36,7 +36,7 @@ Other models behaved differently: two other models also answered the example que
 - Only three tools and six synthetic observations, so this is a learning project, not a real EO system.
 - No real satellite imagery and no vision-language model yet.
 - The benchmark has only six questions; the consistency check used five runs of one model. It checks numbers and words, so an unusual wording can still fail.
-- I wrote the agent loop by hand to understand it. I have not used an agent framework.
+- The agent loop is plain Python code, not an agent framework. I built this project with AI assistants (Claude, Cursor) and tested it.
 
 ## Consistency (5 runs)
 `consistency.py` ran the 6-question benchmark 5 times with `gemini-3.1-flash-lite` on 6 November 2026.
