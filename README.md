@@ -30,7 +30,7 @@ Run with `gemini-3.1-flash-lite` on the Gemini API free tier:
 - I changed the checker to compare numbers with a tolerance of 0.005 (two-decimal rounding counts as correct) and added tests for the checker.
 - After the fix: 6 of 6 passed (one run, so this is not a statistical result).
 
-Other models behaved differently: two other models also answered the example question correctly, and one timed out (504). The newest model was overloaded (503) when I tried it, so the loop retries on 429, 503 and 504.
+The loop retries on 429, 503 and 504, because the Gemini API sometimes returns these errors.
 
 ## Limits
 - Only three tools and six synthetic observations, so this is a learning project, not a real EO system.
